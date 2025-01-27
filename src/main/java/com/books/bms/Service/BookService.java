@@ -44,6 +44,7 @@ public class BookService {
 
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
+
     }
 
     public Optional<Book> getBookById(String id) {
@@ -52,5 +53,9 @@ public class BookService {
 
     public void deleteBook(String id) {
         bookRepository.deleteById(id);
+    }
+
+    public Book updateBook(Book prevBook) {
+        return bookRepository.save(prevBook);
     }
 }
